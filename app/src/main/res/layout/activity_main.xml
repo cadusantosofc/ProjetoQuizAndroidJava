@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:background="@color/red_2"
-            android:text="@string/alternativa_a" />
+            android:text="@string/texto_alternativa_a" />
 
         <RadioButton
             android:id="@+id/rb_b"
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:background="@color/red_3"
-            android:text="@string/alternativa_b" />
+            android:text="@string/texto_alternativa_b" />
 
         <RadioButton
             android:id="@+id/rb_c"
@@ -45,15 +45,14 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:background="@color/red_4"
-            android:text="@string/alternativa_c" />
+            android:text="@string/texto_alternativa_c" />
 
         <RadioButton
             android:id="@+id/rb_d"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:background="@color/red_5"
-            android:gravity="center"
-            android:text="@string/alternativa_d" />
+            android:text="@string/texto_alternativa_d" />
     </RadioGroup>
 
     <Button
@@ -70,7 +69,7 @@
         android:id="@+id/txvPerguntas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="Espaço de perguntas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"

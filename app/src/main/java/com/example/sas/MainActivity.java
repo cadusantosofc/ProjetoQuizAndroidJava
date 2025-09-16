@@ -78,18 +78,11 @@ public class MainActivity extends AppCompatActivity {
         if (indicePergunta < perguntas.length) {
             txvPergunta.setText(perguntas[indicePergunta]);
             rbgPrincipal.clearCheck();
-
-            txvResultado.setText("Pontuação: " + pontuacao + " / " + perguntas.length);
-            txvResultado.setVisibility(View.VISIBLE);
             btnResponder.setEnabled(true);
-            btnReiniciar.setVisibility(View.GONE);
 
         } else {
             txvPergunta.setText("Quiz finalizado!");
-            txvResultado.setText("Você acertou " + pontuacao + " de " + perguntas.length + " perguntas.");
-            txvResultado.setVisibility(View.VISIBLE);
             btnResponder.setEnabled(false);
-            btnReiniciar.setVisibility(View.VISIBLE);
         }
     }
 

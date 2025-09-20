@@ -1,78 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@drawable/background_gradient">
+
+    <TextView
+        android:id="@+id/txvPerguntas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/pergunta_bg"
+        android:gravity="center"
+        android:text="Espaço de pergunta"
+        android:textColor="#3F0D7B"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <RadioGroup
         android:id="@+id/rbg_principal"
-        android:layout_width="400dp"
-        android:layout_height="268dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="20dp"
-        android:background="@color/red_1"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/txvPerguntas"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <RadioButton
             android:id="@+id/rb_a"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:background="@color/red_2"
-            android:text="@string/texto_alternativa_a" />
+            android:button="@null"
+            android:background="@drawable/quiz_option_background"
+            android:padding="16dp"
+            android:text="Resposta 1"
+            android:textColor="#000000"
+            android:textSize="16sp"/>
 
         <RadioButton
             android:id="@+id/rb_b"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:background="@color/red_3"
-            android:text="@string/texto_alternativa_b" />
+            android:button="@null"
+            android:background="@drawable/quiz_option_background"
+            android:padding="16dp"
+            android:text="Resposta 2"
+            android:textColor="#000000"
+            android:textSize="16sp"/>
 
         <RadioButton
             android:id="@+id/rb_c"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:background="@color/red_4"
-            android:text="@string/texto_alternativa_c" />
+            android:button="@null"
+            android:background="@drawable/quiz_option_background"
+            android:padding="16dp"
+            android:text="Resposta 3"
+            android:textColor="#000000"
+            android:textSize="16sp"/>
 
         <RadioButton
             android:id="@+id/rb_d"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/red_5"
-            android:text="@string/texto_alternativa_d" />
+            android:button="@null"
+            android:background="@drawable/quiz_option_background"
+            android:padding="16dp"
+            android:text="Resposta 4"
+            android:textColor="#000000"
+            android:textSize="16sp"/>
     </RadioGroup>
 
     <Button
         android:id="@+id/btn_responder"
-        android:layout_width="301dp"
+        android:layout_width="0dp"
         android:layout_height="55dp"
-        android:text="Responder"
+        android:text="RESPONDER"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:background="@drawable/btn_responder"
+        app:layout_constraintTop_toBottomOf="@id/rbg_principal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rbg_principal" />
-
-    <TextView
-        android:id="@+id/txvPerguntas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Espaço de perguntas"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="128dp" />
-
+        android:layout_margin="24dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

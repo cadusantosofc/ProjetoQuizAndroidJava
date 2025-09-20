@@ -59,6 +59,18 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        private void carregarPerguntas(){
+            if(indicePergunta < perguntas.length){
+                txvPergunta.setText((perguntas[indicePergunta]));
+                rdgPrincipal.clearCheck();
+                btnResponder.setEnabled(true);
+
+            } else {
+                txvPergunta.setText("Fim");
+                btnResponder.setEnabled(false);
+            }
+        }
+
         //btnReiniciar.setOnClickListener(v -> reiniciarQuiz());
 
         btnReiniciar.setOnClickListener(new View.OnClickListener() {

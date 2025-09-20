@@ -17,14 +17,14 @@ public class MainActivity extends AppCompatActivity {
 
 
     private TextView txvPergunta;
-    private RadioGroup rbgPrincipal;
+    private RadioGroup rdgPrincipal;
     private Button btnResponder;
 
-    private int pontuacao = 0;
-    private int indicePergunta = 0;
+    int pontuacao = 0;
+    int indicePergunta = 0;
 
     // Perguntas
-    private String[] perguntas = {
+    String[] perguntas = {
             "Minha pergunta 1",
             "Minha pergunta 2",
             "Minha pergunta 3",
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     };
 
     // IDs das respostas corretas
-    private int[] respostasCorretas = {
+    int[] respostasCorretas = {
             R.id.rb_a, // Pergunta 1 -> rb_a
             R.id.rb_a, // Pergunta 2 -> rb_a
             R.id.rb_b, // Pergunta 3 -> rb_b
@@ -48,17 +48,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         
         txvPergunta = findViewById(R.id.txvPerguntas);
-        rbgPrincipal = findViewById(R.id.rbg_principal);
+        rdgPrincipal = findViewById(R.id.rbg_principal);
         btnResponder = findViewById(R.id.btn_responder);
 
         carregarPergunta();
 
-        //btnResponder.setOnClickListener(v -> verificarResposta());
-        btnResponder.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                verificarResposta();
-            }
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) ->{
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
         });
 
         //btnReiniciar.setOnClickListener(v -> reiniciarQuiz());
@@ -77,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
     private void carregarPergunta() {
         if (indicePergunta < perguntas.length) {
             txvPergunta.setText(perguntas[indicePergunta]);
-            rbgPrincipal.clearCheck();
+            rdgPrincipal.clearCheck();
             btnResponder.setEnabled(true);
 
         } else {
@@ -90,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         if (indicePergunta >= perguntas.length) return;
 
         int respostaCorreta = respostasCorretas[indicePergunta];
-        int respostaSelecionada = rbgPrincipal.getCheckedRadioButtonId();
+        int respostaSelecionada = rdgPrincipal.getCheckedRadioButtonId();
 
         if (respostaSelecionada == -1) {
             Toast.makeText(this, "Selecione uma resposta!", Toast.LENGTH_SHORT).show();
